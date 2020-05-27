@@ -1,0 +1,154 @@
+.hero
+    position: relative
+    &__main
+        height: 400px
+        width: 100%
+        object-fit: cover
+    &__logo, &__logo-description
+        $height: 88px
+        position: absolute
+        top: 0
+        left: 0
+        height: $height
+        width: 100%
+        background-color: rgba($black, .8)
+        color: $orange
+        text-align: center
+        line-height: $height
+        +adaptiv-font(64, 32)
+        font-weight: 900
+        &-description
+            top: unset
+            bottom: 0
+            color: $white
+            font-weight: 400
+            +adaptiv-font(48, 14)
+$widthCatalog: 20vw
+$menuHeight: 88px
+.menu
+    display: flex
+    justify-content: space-around
+    align-items: center
+    height: $menuHeight
+    background-color: $black
+    color: $white
+    +link($white, $orange)
+    +adaptiv-font(24, 12)
+    &_fixed
+        position: fixed
+        top: 0
+        width: 100%
+    &__leftside
+        width: 5vw
+    &__rightside
+        display: flex
+        justify-content: space-around
+        width: 80vw
+    &__list
+        display: flex
+        list-style: none
+        margin-right: 5vw
+        width: 50vw
+    &__item
+        margin: auto 10px
+    &__search
+        width: 100%
+        margin-right: 15px
+        padding: 10px
+    &__btn-search
+        padding: 10px
+        background-color: $white
+        border: 0
+    &__link
+        &_active
+            font-weight: 600
+.catalog
+    &-box
+        position: absolute
+        background-color: $black
+        visibility: hidden
+        width: 0
+        transform: translateX(-100%)
+        transition: .5s
+        &_fixed
+            position: fixed
+        &_active
+            width: 20vw
+            visibility: visible
+            transform: translateX(0)
+    &__title
+        color: $white
+        background-color: transparent
+        border: 0
+        &_close
+            display: none
+    &-list
+        display: flex
+        flex-direction: column
+        align-items: center
+        list-style: none
+        line-height: 250%
+        height: 90vh
+        overflow: auto
+        &::-webkit-scrollbar
+            width: 1em
+        &::-webkit-scrollbar-track
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+        &::-webkit-scrollbar-thumb
+            background-color: darkgrey
+            outline: 1px solid slategrey
+        &__link
+            color: $white
+            width: 100%
+            &:hover,
+            &_active
+                background-color: $orange
+                color: $black
+        &__item
+            width: 100%
+            display: flex
+            justify-content: center
+            text-align: center
+@media (max-device-width: 1200px)
+    .catalog-list
+        &__link
+            color: $white
+            width: 100%
+            &:hover
+                background-color: transparent
+                color: $white
+    .menu
+        a:hover
+            color: $white
+@media (max-width: 1000px)
+    .catalog
+        &-box
+            &_active
+                width: calc(100vw - 17px)
+@media (max-device-width: 1000px)
+    .catalog
+        &-box
+            &_active
+                width: 100vw
+@media (max-width: 700px)
+    .menu
+        flex-direction: column-reverse
+        height: auto
+        padding: 10px 0
+        &__list
+            margin-right: unset
+            justify-content: center
+            margin-bottom: 10px
+            width: unset
+        &__search
+            margin-bottom: 10px
+        &__leftside
+            margin-top: 20px
+            text-align: left
+            width: unset
+        &__rightside
+            flex-direction: column
+    .catalog
+        &__title
+            text-align: center
+            width: 100%

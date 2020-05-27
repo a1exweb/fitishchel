@@ -1,0 +1,51 @@
+.card
+    display: flex
+    flex-direction: column
+    width: 31%
+    margin: 15px
+    margin-bottom: 30px
+    &s
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+    &-video
+        border: 0
+        margin: 20px 0
+        min-height: 400px
+    &__subtitle
+        margin-top: 10px
+        font-weight: 400
+    &__price
+        &-value
+            color: $orange
+    &__footer
+        display: flex
+        justify-content: space-between
+        margin-top: 10px
+    &__button
+        &_more
+            margin-right: 10px
+.button
+    padding: 15px
+    color: $black
+    &_more
+        background-color: $light
+    &_buy
+        background-color: $orange
+@media (max-width: 1400px)
+    .card
+        width: 30%
+@media (max-width: 1200px)
+    .card
+        width: 45%
+@media (max-width: 800px)
+    .card
+        width: 100%
+@media (max-width: 400px)
+    .card
+        margin: 0
+        margin-bottom: 30px
+        &-video
+            min-height: 200px
+        &__footer
+            font-size: 12px

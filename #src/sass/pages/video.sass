@@ -1,0 +1,23 @@
+.card
+    &__title
+        +adaptiv-font(22, 14)
+    &__subtitle
+        +adaptiv-font(20, 12)
+    &-box
+        display: flex
+        justify-content: center
+        &__description
+            max-width: 60%
+            margin-left: 20px
+@media (max-width: 1200px)
+    .card
+        &-box
+            flex-direction: column
+            &
+                .card
+                    width: 100%
+                    margin: 0
+            &__description
+                max-width: 100%
+                margin-top: 30px
+                margin-left: 0
